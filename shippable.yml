@@ -1,4 +1,4 @@
- resources:
+resources:
   - name: sample_job
     type: gitRepo
     repoPath: bindushree16/c7node
