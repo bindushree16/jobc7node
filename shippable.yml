@@ -35,8 +35,9 @@ pipelines:
         execution:
           onExecute:
             - printenv
-            - genrsa -out key.pem 1024
             - openssl version
+            - genrsa -out key.pem 1024
+            
             
       - name: testpipel
         type: bash 
