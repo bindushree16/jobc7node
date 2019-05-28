@@ -38,7 +38,7 @@ pipelines:
             - docker images
             - printenv
             - openssl version
-            - genrsa -out key.pem 1024
+            - openssl genrsa -out key.pem 1024
             
             
       - name: testpipel
