@@ -1,3 +1,5 @@
+#for c7node test 
+
 resources:
   - name: sample_job1
     type: gitRepo
@@ -6,7 +8,7 @@ resources:
       integrationName: bindu_github
       branches:
         only: master
-    initialVersion:
+    version:
       sha: master
       
 pipelines:
