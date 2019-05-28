@@ -27,7 +27,7 @@ pipelines:
 #           priority: 2
         triggeredBy:
           resources:
-            - sample_job
+            - sample_job1
         execution:
           onExecute:
             - printenv
