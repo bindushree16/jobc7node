@@ -1,5 +1,5 @@
 resources:
-  - name: sample_job
+  - name: sample_job1
     type: gitRepo
     repoPath: bindushree16/c7node
     configuration:
@@ -10,7 +10,7 @@ resources:
       sha: master
       
 pipelines:
-  - name: pipeline11
+  - name: pipeline121
     steps:
       - name: testpipelines
         type: bash
