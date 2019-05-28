@@ -1,0 +1,44 @@
+ resources:
+  - name: sample_job
+    type: gitRepo
+    repoPath: bindushree16/c7node
+    configuration:
+      integrationName: bindu_github
+      branches:
+        only: master
+    initialVersion:
+      sha: master
+      
+pipelines:
+  - name: pipeline11
+    steps:
+      - name: testpipelines
+        type: bash
+        setup:
+          runtime:            
+            type: image
+            image:
+              auto:
+                language: node
+                versions: 10.15.3
+#         configuration:
+#           chronological: false 
+#           priority: 2
+        triggeredBy:
+          resources:
+            - sample_job
+        execution:
+          onExecute:
+            - printenv
+            - genrsa -out key.pem 1024
+            - openssl version
+            
+      - name: testpipel
+        type: bash 
+        triggeredBy:
+          steps:
+            - testpipelines
+        execution:
+          onExecute:
+            - echo "hi"
+            - node --version
