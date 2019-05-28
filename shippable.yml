@@ -34,6 +34,7 @@ pipelines:
             - sample_job1
         execution:
           onExecute:
+            - docker pull drydock/c7node:master
             - docker images
             - printenv
             - openssl version
